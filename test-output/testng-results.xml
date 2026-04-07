@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-04-06T02:10:45 IST" name="Default suite" finished-at="2026-04-06T02:11:07 IST" duration-ms="21932">
+    <groups>
+    </groups>
+    <test started-at="2026-04-06T02:10:45 IST" name="Default test" finished-at="2026-04-06T02:11:07 IST" duration-ms="21932">
+      <class name="Practise.PageObjectModel.LoginTest">
+        <test-method is-config="true" signature="setUpBrowser()[pri:0, instance:Practise.PageObjectModel.LoginTest@63a12c68]" started-at="2026-04-06T02:10:45 IST" name="setUpBrowser" finished-at="2026-04-06T02:10:53 IST" duration-ms="7230" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpBrowser -->
+        <test-method signature="fillForm(java.lang.String,java.lang.String)[pri:0, instance:Practise.PageObjectModel.LoginTest@63a12c68]" started-at="2026-04-06T02:10:53 IST" name="fillForm" data-provider="loginData" finished-at="2026-04-06T02:10:55 IST" duration-ms="1915" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[username]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[test]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fillForm -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Practise.PageObjectModel.LoginTest@63a12c68]" started-at="2026-04-06T02:10:55 IST" name="tearDown" finished-at="2026-04-06T02:10:55 IST" duration-ms="559" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUpBrowser()[pri:0, instance:Practise.PageObjectModel.LoginTest@63a12c68]" started-at="2026-04-06T02:10:55 IST" name="setUpBrowser" finished-at="2026-04-06T02:10:59 IST" duration-ms="4051" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpBrowser -->
+        <test-method signature="fillForm(java.lang.String,java.lang.String)[pri:0, instance:Practise.PageObjectModel.LoginTest@63a12c68]" started-at="2026-04-06T02:10:59 IST" name="fillForm" data-provider="loginData" finished-at="2026-04-06T02:11:01 IST" duration-ms="1587" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[username1]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[test1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fillForm -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Practise.PageObjectModel.LoginTest@63a12c68]" started-at="2026-04-06T02:11:01 IST" name="tearDown" finished-at="2026-04-06T02:11:01 IST" duration-ms="518" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUpBrowser()[pri:0, instance:Practise.PageObjectModel.LoginTest@63a12c68]" started-at="2026-04-06T02:11:01 IST" name="setUpBrowser" finished-at="2026-04-06T02:11:04 IST" duration-ms="3198" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpBrowser -->
+        <test-method signature="fillForm(java.lang.String,java.lang.String)[pri:0, instance:Practise.PageObjectModel.LoginTest@63a12c68]" started-at="2026-04-06T02:11:04 IST" name="fillForm" data-provider="loginData" finished-at="2026-04-06T02:11:07 IST" duration-ms="2251" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[username2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[test2]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fillForm -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Practise.PageObjectModel.LoginTest@63a12c68]" started-at="2026-04-06T02:11:07 IST" name="tearDown" finished-at="2026-04-06T02:11:07 IST" duration-ms="532" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- Practise.PageObjectModel.LoginTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
