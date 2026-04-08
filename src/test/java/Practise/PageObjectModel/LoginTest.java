@@ -27,6 +27,7 @@ public class LoginTest extends SeleniumGBaseTest{
 		System.out.println("Password entered successfully!"); 
 		wait.until(ExpectedConditions.visibilityOf(lgnPage.loginBtn));
 		lgnPage.loginBtn.click(); 
+		System.out.println("Login clicked successfully!"); 
 		
 	}
 
