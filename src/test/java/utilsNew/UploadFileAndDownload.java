@@ -33,6 +33,7 @@ public class UploadFileAndDownload {
 	WebDriverWait wait= new WebDriverWait(driver, 10);
 	wait.until(ExpectedConditions.visibilityOf(deleteBtn));
 	deleteBtn.click();
+	System.out.println("Deleted");
 	
 	}
 
