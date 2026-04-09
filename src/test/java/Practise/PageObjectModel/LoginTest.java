@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 import utilsNew.LoginDataProvider;
 import utilsNew.ScreenshotUtil;
 
-public class LoginTest extends SeleniumGBaseTest{
+public class LoginTest extends BaseTest{
 	
 	@Test(dataProvider="loginData", dataProviderClass=LoginDataProvider.class)
 	public void fillForm(String username, String password) {
