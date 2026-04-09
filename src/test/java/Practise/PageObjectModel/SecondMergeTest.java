@@ -2,11 +2,11 @@ package Practise.PageObjectModel;
 
 import org.testng.annotations.Test;
 
-public class SecondTest {
+public class SecondMergeTest {
 	
 	@Test
 	public void TestSoftwre() {
-		System.out.println("Test softwre");
+		System.out.println("Test softwre Merge");
 	}
 
 }
