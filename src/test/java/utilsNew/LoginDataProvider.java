@@ -1,4 +1,4 @@
-package utils;
+package utilsNew;
 
 import org.testng.annotations.DataProvider;
 public class LoginDataProvider {
