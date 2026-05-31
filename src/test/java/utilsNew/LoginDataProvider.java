@@ -8,11 +8,11 @@ public class LoginDataProvider {
 		
 		
 		return new Object[][] {
-			
-			{"username", "test"},
-			{"username1", "test1"},
-			{"username2", "test2"},
-			
+
+			{"invalid_user",   "secret_sauce"},   // invalid username, valid password
+			{"standard_user",  "invalid_pass"},    // valid username, invalid password
+			{"standard_user",  "secret_sauce"},    // valid username and password
+
 		};
 	}
 		
