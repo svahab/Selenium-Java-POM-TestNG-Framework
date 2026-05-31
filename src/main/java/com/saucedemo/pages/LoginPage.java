@@ -36,6 +36,11 @@ public class LoginPage {
 
 	}
 
+	public void clickLoginButton()
+	{
+		loginBtn.click();
+	}
+
 
 
 
