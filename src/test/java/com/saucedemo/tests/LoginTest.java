@@ -1,4 +1,4 @@
-package Practise.PageObjectModel;
+package com.saucedemo.tests;
 
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -7,28 +7,27 @@ import org.testng.annotations.Test;
 import utilsNew.LoginDataProvider;
 import utilsNew.ScreenshotUtil;
 
-public class LoginTest extends BaseTest{
-	
+public class LoginTest extends BaseTest {
+
 	@Test(dataProvider="loginData", dataProviderClass=LoginDataProvider.class)
 	public void fillForm(String username, String password) {
-		
-		
+
 		String screenshotName= "LoginScreen_"+username+System.currentTimeMillis();
 		ScreenshotUtil.takeScreenshot(driver, screenshotName);
 		System.out.println("Taking screenshot for: " + username);
 		WebDriverWait wait= new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.visibilityOf(lgnPage.usernameTest));
-		lgnPage.usernameTest.click(); 
+		lgnPage.usernameTest.click();
 		lgnPage.usernameTest.sendKeys(username);
-		System.out.println("UserName entered successfully!"); 
+		System.out.println("UserName entered successfully!");
 		wait.until(ExpectedConditions.visibilityOf(lgnPage.passwordTest));
-		lgnPage.passwordTest.click(); 
+		lgnPage.passwordTest.click();
 		lgnPage.passwordTest.sendKeys(password);
-		System.out.println("Password entered successfully!"); 
+		System.out.println("Password entered successfully!");
 		wait.until(ExpectedConditions.visibilityOf(lgnPage.loginBtn));
-		lgnPage.loginBtn.click(); 
-		System.out.println("Login clicked successfully!"); 
-		
+		lgnPage.loginBtn.click();
+		System.out.println("Login clicked successfully!");
+
 	}
 
 }

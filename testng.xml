@@ -4,7 +4,7 @@
 <suite name="Suite">
   <test thread-count="1" name="Test">
     <classes>
-      <class name="Practise.PageObjectModel.LoginTest"/>
+      <class name="com.saucedemo.tests.LoginTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
