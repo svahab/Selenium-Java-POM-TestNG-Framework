@@ -2,7 +2,6 @@ package com.saucedemo.tests;
 
 import java.time.Duration;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -64,10 +63,7 @@ public class LoginTest extends BaseTest {
 
 		// Validate login result — capture error message on invalid credentials
 		try {
-			boolean errorPresent = wait.until(ExpectedConditions.or(
-				ExpectedConditions.visibilityOfElementLocated(By.xpath("//h3[@data-test='error']")),
-				ExpectedConditions.urlContains("inventory")
-			));
+			wait.until(ExpectedConditions.visibilityOf(lgnPage.errorMessage));
 
 			if (lgnPage.isErrorMessageDisplayed()) {
 				String errorText = lgnPage.getErrorMessage();
@@ -79,7 +75,7 @@ public class LoginTest extends BaseTest {
 					"Unexpected error message: " + errorText
 				);
 			} else {
-				System.out.println("Login successful — Redirected to inventory page for user: " + username);
+				System.out.println("Login successful for user: " + username);
 			}
 		} catch (Exception e) {
 			System.out.println("Post-login validation failed: " + e.getMessage());
