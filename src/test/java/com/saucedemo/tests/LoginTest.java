@@ -2,6 +2,7 @@ package com.saucedemo.tests;
 
 import java.time.Duration;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -59,6 +60,30 @@ public class LoginTest extends BaseTest {
 		} catch (Exception e) {
 			System.out.println("Failed to click login button: " + e.getMessage());
 			Assert.fail("Login button not clickable: " + e.getMessage());
+		}
+
+		// Validate login result — capture error message on invalid credentials
+		try {
+			boolean errorPresent = wait.until(ExpectedConditions.or(
+				ExpectedConditions.visibilityOfElementLocated(By.xpath("//h3[@data-test='error']")),
+				ExpectedConditions.urlContains("inventory")
+			));
+
+			if (lgnPage.isErrorMessageDisplayed()) {
+				String errorText = lgnPage.getErrorMessage();
+				System.out.println("Login failed — Error message displayed: " + errorText);
+				Assert.assertTrue(
+					errorText.contains("Username and password do not match") ||
+					errorText.contains("Username is required") ||
+					errorText.contains("Password is required"),
+					"Unexpected error message: " + errorText
+				);
+			} else {
+				System.out.println("Login successful — Redirected to inventory page for user: " + username);
+			}
+		} catch (Exception e) {
+			System.out.println("Post-login validation failed: " + e.getMessage());
+			Assert.fail("Unable to verify login result: " + e.getMessage());
 		}
 
 	}

@@ -9,31 +9,30 @@ public class LoginPage {
 
 	public WebDriver driver;
 
-
 	public LoginPage(WebDriver driver)
 	{
-		this.driver=driver;
+		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath ="//input[@id='user-name']") public WebElement usernameTest;
+	@FindBy(xpath = "//input[@id='user-name']")          public WebElement usernameTest;
 
-	@FindBy(xpath ="//input[@id='password']") public WebElement passwordTest;
+	@FindBy(xpath = "//input[@id='password']")           public WebElement passwordTest;
 
-	@FindBy(xpath ="//input[@id='login-button']") public WebElement loginBtn;
+	@FindBy(xpath = "//input[@id='login-button']")       public WebElement loginBtn;
+
+	@FindBy(xpath = "//h3[@data-test='error']")          public WebElement errorMessage;
 
 	public void enterUsername(String username)
 	{
 		usernameTest.clear();
 		usernameTest.sendKeys(username);
-
 	}
 
 	public void enterPassword(String password)
 	{
 		passwordTest.clear();
 		passwordTest.sendKeys(password);
-
 	}
 
 	public void clickLoginButton()
@@ -41,8 +40,18 @@ public class LoginPage {
 		loginBtn.click();
 	}
 
+	public String getErrorMessage()
+	{
+		return errorMessage.getText();
+	}
 
-
-
+	public boolean isErrorMessageDisplayed()
+	{
+		try {
+			return errorMessage.isDisplayed();
+		} catch (Exception e) {
+			return false;
+		}
+	}
 
 }
