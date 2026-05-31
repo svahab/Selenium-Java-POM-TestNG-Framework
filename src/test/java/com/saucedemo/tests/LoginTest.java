@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import com.saucedemo.pages.HomePage;
 import utilsNew.LoginDataProvider;
 import utilsNew.ScreenshotUtil;
 
@@ -61,11 +62,12 @@ public class LoginTest extends BaseTest {
 			Assert.fail("Login button not clickable: " + e.getMessage());
 		}
 
-		// Validate login result — capture error message on invalid credentials
-		try {
-			wait.until(ExpectedConditions.visibilityOf(lgnPage.errorMessage));
+		// Validate login result
+		if (lgnPage.isErrorMessageDisplayed()) {
 
-			if (lgnPage.isErrorMessageDisplayed()) {
+			// Invalid credentials — capture and assert error message
+			try {
+				wait.until(ExpectedConditions.visibilityOf(lgnPage.errorMessage));
 				String errorText = lgnPage.getErrorMessage();
 				System.out.println("Login failed — Error message displayed: " + errorText);
 				Assert.assertTrue(
@@ -74,12 +76,26 @@ public class LoginTest extends BaseTest {
 					errorText.contains("Password is required"),
 					"Unexpected error message: " + errorText
 				);
-			} else {
-				System.out.println("Login successful for user: " + username);
+			} catch (Exception e) {
+				System.out.println("Failed to capture error message: " + e.getMessage());
+				Assert.fail("Error message not visible: " + e.getMessage());
 			}
-		} catch (Exception e) {
-			System.out.println("Post-login validation failed: " + e.getMessage());
-			Assert.fail("Unable to verify login result: " + e.getMessage());
+
+		} else {
+
+			// Valid credentials — validate home page is displayed
+			try {
+				HomePage homePage = new HomePage(driver);
+				wait.until(ExpectedConditions.visibilityOf(homePage.inventoryContainer));
+				wait.until(ExpectedConditions.visibilityOf(homePage.productsTitle));
+				Assert.assertTrue(homePage.isHomePageDisplayed(), "Home page inventory container not displayed.");
+				Assert.assertEquals(homePage.getProductsTitle(), "Products", "Home page title mismatch.");
+				System.out.println("Login successful — Home page validated. Title: " + homePage.getProductsTitle());
+			} catch (Exception e) {
+				System.out.println("Home page validation failed: " + e.getMessage());
+				Assert.fail("Home page not loaded after valid login: " + e.getMessage());
+			}
+
 		}
 
 	}
